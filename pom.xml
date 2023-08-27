@@ -154,12 +154,22 @@
       </plugin>
 
         <plugins>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M3</version>
-    </plugin>
+   <build>
+		<plugins> 
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
+                    <version>5.5.2</version>
+                </dependency>
+            </dependencies>
+        </plugin>
 </plugins>
+</build>
 
       <!-- Spring Boot Actuator displays build-related information if a git.properties
         file is present at the classpath -->
